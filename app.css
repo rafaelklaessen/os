@@ -1,0 +1,700 @@
+@font-face{
+  font-family: sfb;
+  src: url('fonts/System San Francisco Display Bold.woff') format('woff');
+}
+
+@font-face{
+  font-family: sf;
+  src: url('fonts/System San Francisco Display Regular.woff') format('woff');
+}
+
+@font-face{
+  font-family: sfl;
+  src: url('fonts/System San Francisco Display Thin.woff') format('woff');
+}
+
+@font-face{
+  font-family: sful;
+  src: url('fonts/System San Francisco Display UltraLight.woff') format('woff');
+}
+
+body {
+  font-family: sf;
+  font-size: 1em;
+  background-color: #000000;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/*Otherwise I have to type this a million times*/
+.nrm-img {
+  width: 100%;
+  height: 100%;
+}
+
+/*Buttons and input css*/
+
+.toolbar button, .t-bttn {
+  margin-top: 7px;
+  color: #585858;
+  box-shadow: 0 1px 1px rgba(182, 180, 182, 1);
+  min-width: 25px;
+  height: 25px;
+  line-height: 20px;
+  border: none;
+  font-size: 13px;
+}
+
+.toolbar button:active, .t-bttn:active {
+  color: #585858;
+  background: #FFFFFF;
+  border: none;
+}
+
+.toolbar input, .t-input {
+  background-color: #FFFFFF;
+  color: #585858;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px rgba(182, 180, 182, 1);
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 75px;
+  height: 25px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+button {
+  background-color: #FFFFFF;
+  color: #000000;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 65px;
+  height: 22px;
+  line-height: 15px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #B6B4B6;
+  border-bottom: 2px solid #BEBEBE;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 12px;
+  outline-width: 0;
+}
+
+.default-bttn {
+  color: #FFFFFF;
+  background: linear-gradient(#6AB2fA, #1A8AFA);
+  background: -moz-linear-gradient(#6AB2fA, #1A8AFA);
+  background: -webkit-linear-gradient(#6AB2fA, #1A8AFA);
+  border: 1px solid #64A8F9;
+  border-bottom: 2px solid #1174FF;
+}
+
+button:active {
+  color: #FFFFFF;
+  background: linear-gradient(#6AB2fA, #1A8AFA);
+  background: -moz-linear-gradient(#6AB2fA, #1A8AFA);
+  background: -webkit-linear-gradient(#6AB2fA, #1A8AFA);
+  border: 1px solid #64A8F9;
+  border-bottom: 2px solid #1174FF;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.loader .container {
+  margin-top: 50vh;
+  margin-left: 50%;
+  margin-right: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+.backContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  display: none;
+}
+
+.backContainer .back {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: calc(100% + 100px);
+  height: calc(100% + 100px);
+  background-position: center;
+  background-image: url('images/bg/default.jpg');
+  background-size: cover;
+  background-repeat: none;
+  filter: blur(10px);
+  -moz-filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.backContainer .activated {
+  filter: blur(0);
+  -moz-filter: blur(0);
+  -webkit-filter: blur(0);
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  display: none;
+  overflow: hidden;
+}
+
+.login .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.login .bar .item-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login .bar .item-container .item-time {
+  margin-right: 7px;
+}
+
+.login .container {
+  margin-top: 50vh;
+  margin-left: 50%;
+  margin-right: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  text-align: center;
+}
+
+.login .container .pf-img {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75px;
+  height: 75px;
+}
+
+.login .container .pf-img img {
+  border-radius: 100px;
+}
+
+.login .container .pf-name {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.login .container .login-input {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 175px;
+  height: 30px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  border: none;
+  opacity: 0.2;
+  box-sizing: border-box;
+  padding: 5px;
+  outline-width: 0;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.login .container .login-input:focus {
+  opacity: 0.4;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  z-index: 20;
+}
+
+main .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  background-color: rgba(238, 238, 238, 0.95);
+  color: #000000;
+  font-size: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  overflow: none;
+  z-index: 10;
+}
+
+main .bar .noc {
+  cursor: default;
+}
+
+main .bar li {
+  float: left;
+  list-style: none;
+  cursor: pointer;
+}
+
+main .bar .tools-container {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+main .bar .tools-container li {
+  position: relative;
+  margin-left: 10px;
+  float: left;
+}
+
+main .bar .tools-container li .c-con {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+main .bar .tools-container li .c-con:hover {
+  background-color: #065DC4;
+  color: #FFFFFF;
+}
+
+main .bar .tools-container li:hover > ul {
+  visibility: visible;
+}
+
+main .bar .tools-container li ul .line {
+  margin: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #CDCDCD;
+}
+
+main .bar .tools-container li ul .divider {
+  margin-top: 3.5px;
+  margin-bottom: 3.5px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E0DFDF;
+  cursor: default;
+}
+
+main .bar .tools-container li ul .divider:hover {
+  background-color: #E0DFDF;
+}
+
+main .bar .tools-container li ul {
+  position: absolute;
+  top:25px;
+  left: 0;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: rgba(238, 238, 238, 1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 5px 5px;
+  width: 200px;
+  cursor: default;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+main .bar .tools-container li ul li {
+  clear: both;
+  padding: 0;
+  margin: 0;
+  padding: 0 0 0 20px;
+  width: 100%;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+}
+
+main .bar .tools-container li ul li:hover {
+  background-color: #065DC4;
+  color: #FFFFFF;
+}
+
+main .bar .tools-container li ul li:nth-child(2) {
+  font-weight: normal;
+}
+
+main .bar .tools-container li ul li:last-child {
+  margin-bottom: 3.5px;
+}
+
+main .bar .tools-container li:nth-child(2) {
+  font-weight: bold;
+}
+
+main .bar .item-container {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+main .bar .item-container span {
+  margin-right: 7px;
+}
+
+main .bar span img {
+  margin-top: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+main .bar li img {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+main .dockContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 12;
+}
+
+main .dockContainer .dock {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 100px;
+  background-color: rgba(155, 155, 155, 0.9);
+  border-radius: 10px 10px 0 0;
+}
+
+main .dockContainer .dock .itemContainer {
+  display: flex;
+  display: -webkit-flex;
+}
+
+main .dockContainer .dock .itemContainer .item {
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+main .dockContainer .dock .itemContainer .jump {
+  transform: translate(0, -25%);
+}
+
+main .dockContainer .dock .itemContainer .item .launched {
+  margin-top: -5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5px;
+  height: 5px;
+  background-color: #000000;
+  border-radius: 5px;
+  display: block;
+}
+
+main .dockContainer .dock .itemContainer .item img {
+  margin-top: 8px;
+  width: 80%;
+  height: 90%;
+}
+
+main .rocket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  z-index: 11;
+  display: none;
+}
+
+main .rocket-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
+main .rocket-bg .blur {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: calc(100% + 100px);
+  height: calc(100% + 100px);
+  background-position: center;
+  background-image: url(images/bg/default.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  filter: blur(10px);
+  -moz-filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+main .window {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 300px;
+  width: 600px;
+  min-height: 150px;
+  min-width: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+main .window .app-content {
+  position: absolute;
+  background: none;
+  color: #585858;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.1);
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+main .window .activated {
+  transform: scale(1);
+}
+
+main .window .app-content .toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 19px;
+  background: linear-gradient(#F0ECF0, #D7D5D7);
+  background: -moz-linear-gradient(#F0ECF0, #D7D5D7);
+  background: -webkit-linear-gradient(#F0ECF0, #D7D5D7);
+  border-bottom: 1px solid #959294;
+}
+
+main .window .app-content .toolbar .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 19px;
+  line-height: 19px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+main .window .app-content .toolbar .container .bttnContainer{
+  position: absolute;
+  top: 8.5px;
+  transform: translate(0, -50%);
+  width: 65px;
+  height: 12px;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+main .window .app-content .toolbar .container .bttnContainer .bttn {
+  width: 12px;
+  height: 12px;
+  line-height: 10px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 12px;
+  margin-left: 7px;
+  float: left;
+  background-color: #FFFFFF;
+  font-size: 10px;
+  color: #000000;
+  cursor: pointer;
+}
+
+main .window .app-content .toolbar .container .bttnContainer .bttn .text {
+  opacity: 0.2;
+}
+
+main .window .app-content .toolbar .container .bttnContainer .close {
+  background-color: #FC625C;
+}
+
+main .window .app-content .toolbar .container .bttnContainer .minimize {
+  background-color: #FDBD41
+}
+
+main .window .app-content .toolbar .container .bttnContainer .maximize {
+  background-color: #34C849;
+}
+
+main .window .app-content .toolbar .container .nameContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 130px);
+  height: 100%;
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+main .window .app-content .toolbar .container .nameContainer .name img {
+  width: 15px;
+  height: 15px;
+}
+
+main .window .app-content .content {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 100%;
+  height: calc(100% - 20px);
+  background-color: #FFFFFF;
+}
+
+main .app {
+  display: none;
+}
+
+main .finder {
+  display: block;
+  border: 1px solid #BAB7BA;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+main .finder .app-content {
+  transform: scale(1);
+}
+
+main .safari {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+
+}
+
+main .safari .app-content .toolbar .container {
+  height: 39px;
+}
+
+main .safari .app-content .toolbar .container .bttnContainer {
+  top: 19px;
+}
+
+main .safari .app-content .toolbar {
+  height: 39px;
+}
+
+main .safari .app-content .toolbar .container .pg-bttns {
+  margin-left: 72px;
+  width: 100px;
+  text-align: left;
+}
+
+main .safari .app-content .toolbar .container .pg-bttns button {
+  width: 25px;
+  margin-left: -2px;
+  padding: 0;
+}
+
+main .safari .app-content .toolbar .container .pg-bttns button img {
+  margin: 6px;
+  width: 13px;
+  height: 13px;
+}
+
+main .safari .app-content .toolbar .container .search-field {
+  margin-top: -25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  min-width: 200px;
+  height: 25px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+main .safari .app-content .toolbar .container .search-field input {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+main .safari .app-content .toolbar .container .search-field .refresh-bttn {
+  margin-top: -25px;
+  margin-left: calc(100% - 25px);
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+main .safari .app-content .content {
+  margin-top: 40px;
+  height: calc(100% - 40px);
+}
+
+main .safari .app-content .content iframe {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
